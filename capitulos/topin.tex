@@ -315,7 +315,7 @@ O Django é um framework de alto nível para a linguagem Python, que incentiva o
 
 \subsubsection{Django Rest Framework}
 
-O framework Django REST é um módulo que utilizado juntamente com o Django fornece um kit de ferramentas poderoso e flexível para criar APIs da Web, podemos destacar algumas das principais razões para sua utilização no desenvolvimento de API's seguindo a arquitetura REST, são estas:
+O framework Django REST é um módulo que utilizado juntamente com o Django fornece um kit de ferramentas poderoso e flexível para criar APIs da Web, pode-se destacar algumas das principais razões para sua utilização no desenvolvimento de API's seguindo a arquitetura REST, são estas:
 
 \begin{lista}
 \item A API navegável da Web, fornecendo um meio gráfico e interativo para verificar o funcionamento da API.
@@ -432,9 +432,11 @@ Os administradores da empresa de transporte público possuem um papel vital para
 \label{fig:empresa-cadastro-linha}
 \end{figure}
 
-Ainda no cadastro das linhas é possível visualizar na Figura \ref{fig:empresa-cadastro-horarios-trajeto} que os administradores também deverão informar os horários disponíveis para o transporte público e, não apenas registrar os horários, como também separar estes horários por dia da semana, para que não exista a possibilidade do usuário ser informado de um horário que não estará disponível no fim de semana, por exemplo.  Ao registrarem os horários devemos destacar a forma de registro dos dias da semana, que para o protótipo da aplicação desenvolvida foi criado um campo no banco de dados PostgreSQL do tipo lista de valores, o que permiti salvar em um único campo um conjunto de valores sem que exista a necessidade de criarmos uma nova tabela para isso, em nosso protótipo o registro dos dias da semana para ficar compatível com o banco de dados é colocado em uma cadeira de caracteres com os valores separados por vírgula, as opções de dias da semana são: \textit{sunday, monday, tuesday, wednesday, thursday, friday, saturday}.
+Ainda no cadastro das linhas é possível visualizar na Figura \ref{fig:empresa-cadastro-horarios-trajeto} que os administradores também deverão informar os horários disponíveis para o transporte público e, não apenas registrar os horários, como também separar estes horários por dia da semana, para que não exista a possibilidade do usuário ser informado de um horário que não estará disponível no fim de semana, por exemplo.
 
-Ao visualizarmos a Figura \ref{fig:empresa-cadastro-horarios-trajeto} também podemos perceber que além dos horários o administrador irá registrar todos os pontos de uma linha, contudo estes pontos são referentes ao trajeto, ou seja, o caminho percorrido pelo transporte na linha em questão. Geralmente, os pontos de referência escolhidos são baseados em sua localização no mapa para formar o desenho do trajeto possível, como por exemplo são colocadas as coordenadas geográficas apenas das curvas do trajeto, para os perfeccionistas é possível registrar todas as coordenadas do trajeto, o que pode facilmente passar de 200 coordenadas geográficas.
+Ao registrar os horários, a forma de registro dos dias da semana se destaca, pois para esta aplicação foi criado um campo no banco de dados PostgreSQL do tipo lista de valores, que se trata de um tipo de campo onde é permitido salvar um conjunto de valores sem que exista a necessidade criação de uma nova tabela para tal objetivo, por esse motivo o registro dos dias da semana para ser compatível com o banco de dados é colocado em uma cadeia de caracteres com os valores separados por vírgula, as opções de dias da semana são: \textit{sunday, monday, tuesday, wednesday, thursday, friday, saturday}.
+
+Ao visualizar a Figura \ref{fig:empresa-cadastro-horarios-trajeto} também podemos perceber que além dos horários, o administrador irá registrar todos os pontos de uma linha, contudo estes pontos são referentes ao trajeto, ou seja, o caminho percorrido pelo transporte na linha em questão. Geralmente, os pontos de referência escolhidos são baseados em sua localização no mapa para formar o desenho do trajeto possível, como por exemplo são colocadas as coordenadas geográficas apenas das curvas do trajeto, para os perfeccionistas é possível registrar todas as coordenadas do trajeto, o que pode facilmente passar de 200 coordenadas geográficas.
 
 \begin{figure}[H]
 \caption{Topin para Empresa - Tela de Cadastro dos Horários e Trajeto da Linha}
@@ -444,6 +446,7 @@ Ao visualizarmos a Figura \ref{fig:empresa-cadastro-horarios-trajeto} também po
 \label{fig:empresa-cadastro-horarios-trajeto}
 \end{figure}
 
+Os marcadores são pontos de interesse no uso de transporte público e para os administradores é disponibilizado um meio de registro desses pontos, ao analisar a Figura \ref{fig:empresa-cadastro-ponto} é perceptível a possibilidade do administrador da empresa registrar a localização do marcador, bem como é possível informar uma descrição do marcador no intuito de informar ao passageiros mais detalhes sobre o ponto registrado.
 
 \begin{figure}[H]
 \caption{Topin para Empresa - Tela de Cadastro dos Marcadores}
@@ -452,7 +455,14 @@ Ao visualizarmos a Figura \ref{fig:empresa-cadastro-horarios-trajeto} também po
 \legend{Fonte: Autor}
 \label{fig:empresa-cadastro-ponto}
 \end{figure}
-Os marcadores são pontos de interesse no uso de transporte público e para os administradores é disponibilizado um meio de registro desses pontos, ao analisar a figura \ref{fig:empresa-cadastro-ponto} é perceptível a possibilidade do administrador da empresa registrar a localização do marcador, bem como é possível informar uma descrição do marcador no intuito de informar ao passageiros mais detalhes sobre o ponto registrado.
+
+Um dos principais problemas descritos nesse trabalho se deve a dificuldade dos passageiros entrarem em contato com as pessoas
+responsáveis pelo transporte público para descrever a sua indignação com o serviço prestado de alguma forma, como já foi
+demonstrado neste projeto os passageiros, muitas vezes, não sabem a quem reclamar e acabam culpando pessoas ou instituições
+que não tem autoridade para solucionar o problema encontrado e, como pode ser visto na Figura \ref{fig:empresa-visualizar-reclamacao},
+visando este problema foi disponibilizada, aos administradores das empresas de transporte público, uma seção onde eles podem
+acompanhar as reclamações que os passageiros enviaram por meio do aplicativo móvel do Topin.
+
 \begin{figure}[H]
 \caption{Topin para Empresa - Tela de Visualização das Reclamações}
 \centering
@@ -461,11 +471,9 @@ Os marcadores são pontos de interesse no uso de transporte público e para os a
 \label{fig:empresa-visualizar-reclamacao}
 \end{figure}
 
-Um dos principais problemas descritos nesse trabalho se deve a dificuldade dos passageiros entrarem em contato com as pessoas responsáveis pelo transporte público para descrever a sua indignação com o serviço prestado de alguma forma, como já foi demonstrado neste projeto os passageiros, muitas vezes, não sabem a quem reclamar e acabam culpando pessoas ou instituições que não tem autoridade para solucionar o problema encontrado e, como pode ser visto na Figura \ref{fig:empresa-visualizar-reclamacao}, visando este problema foi disponibilizada, aos administradores das empresas de transporte público, uma seção onde eles podem acompanhar as reclamações que os passageiros enviaram por meio do aplicativo móvel do Topin.
-
 \subsection{Passageiro}
 
-O aplicativo criado para o uso dos passageiros de transporte coletivo possui o objetivo de informá-los quanto a detalhes referentes ao funcionamento do serviço de transporte público, porém antes de detalharmos algumas das funcionalidades do aplicativo vale ressaltar o funcionamento do aplicativo para manutenção dos dados sem a necessidade do uso de internet, por ser um recurso que funciona em segundo plano não existe a possibilidade de demonstrá-lo graficamente, entretanto todos os dados mostrados no aplicativo são consultados na API de informações do Topin, em que há a necessidade de uso de uma rede de dados, contudo o aplicativo ao consultar as informações, automaticamente salva as informações no banco de dados, permitindo verificar em um acesso posterior se há  internet disponível no dispositivo ou se foi encontrado algum erro na consulta das informações, caso isso aconteça, serão exibidos os dados armazenados localmente e, com isso, garantir que os passageiros terão acesso as informações que precisa mesmo que não possua acesso a uma rede de dados disponível no momento.
+O aplicativo criado para o uso dos passageiros de transporte coletivo possui o objetivo de informá-los quanto a detalhes referentes ao funcionamento do serviço de transporte público, porém antes de detalhar algumas das funcionalidades do aplicativo vale ressaltar o funcionamento do aplicativo para manutenção dos dados sem a necessidade do uso de internet, por ser um recurso que funciona em segundo plano não existe a possibilidade de demonstrá-lo graficamente, entretanto todos os dados mostrados no aplicativo são consultados na API de informações do Topin, em que há a necessidade de uso de uma rede de dados, contudo o aplicativo ao consultar as informações, automaticamente salva as informações no banco de dados, permitindo verificar em um acesso posterior se há  internet disponível no dispositivo ou se foi encontrado algum erro na consulta das informações, caso isso aconteça, serão exibidos os dados armazenados localmente e, com isso, garantir que os passageiros terão acesso as informações que precisa mesmo que não possua acesso a uma rede de dados disponível no momento.
 
 Uma das funcionalidades principais do aplicativo pode ser vista na Figura \ref{fig:passageiro-linhas-disponiveis} em que é possível perceber a presença de um ambiente que permite visualizar todas as linhas disponíveis para uso do transporte público na região, além de dividir essas informações com um mapa demonstrando sua localização atual. Ao passageiro também é permitido arrastar a lista das linhas para cima permitindo visualizar apenas as linhas disponíveis, em tela cheia, ou como podemos visualizar na Figura \ref{fig:passageiro-visualizacao-linha} é possível deslizar a lista de linhas para baixo tornando possível apenas visualizar em tela cheia o mapa e, portanto o passageiro poderá ter uma melhor visualização da sua posição atual em relação as paradas e o trajeto da linha selecionada.
 
@@ -485,7 +493,16 @@ Uma das funcionalidades principais do aplicativo pode ser vista na Figura \ref{f
 \label{fig:passageiro-visualizacao-linha}
 \end{figure}
 
-Ao analisarmos a Figura \ref{fig:passageiro-horarios-linha} é visível a presença da mesma funcionalidade existente para a lista de linhas, também na lista de horários em que é possível arrastar a lista tanto para cima, como para baixo, para destacar a visualização de um dos componentes da tela que está dividida e o passageiro ao consultar a lista de horários automaticamente é demonstrado os horários do dia da semana atual baseado no calendário local do aplicativo, contudo é permitido ao usuário alternar entre os dias da semana, que ao selecionar um dia da semana diferente será mostrado apenas o ponto de partida e os horários disponíveis para aquele dia da semana específico, como por exemplo a terça-feira que está selecionada na Figura \ref{fig:passageiro-horarios-linha} é possível visualizar todos os horários disponíveis na terça e a origem a partir do ponto de partida da linha, neste caso específico, a parada do Centro.
+Ao observar a Figura \ref{fig:passageiro-horarios-linha} é perceptível a presença do mesmo recurso existente
+para a lista de linhas, recurso este que possibilita a lista de horários ser arrastada tanto para cima, como
+para baixo, para destacar a visualização de um dos componentes da tela que está dividida.
+
+O passageiro ao consultar a lista de horários automaticamente é demonstrado os horários do dia da semana baseado
+na data atual do \textit{smartphone}, no entanto é permitido ao usuário alternar entre os dias da semana, que ao
+selecionar um dia da semana diferente será mostrado apenas o ponto de partida e os horários disponíveis para aquele
+dia da semana específico, como por exemplo a terça-feira que está selecionada na Figura \ref{fig:passageiro-horarios-linha}
+é possível visualizar todos os horários disponíveis e a origem a partir do ponto de partida da linha, nesse
+caso específico, a parada do Centro.
 
 \begin{figure}[H]
 \caption{Topin para Passageiros - Tela de Visualização dos Horários da Linha}
@@ -495,6 +512,8 @@ Ao analisarmos a Figura \ref{fig:passageiro-horarios-linha} é visível a presen
 \label{fig:passageiro-horarios-linha}
 \end{figure}
 
+Pode-se visualizar na Figura \ref{fig:passageiro-pontos-linha} que é possível visualizar os marcadores de interesse para a linha selecionada, em que é demonstrado no mapa por meio de um ícone todos os marcadores listados, ou seja, é visível não apenas a lista dos pontos de interesses, como também a sua geolocalização no mapa, e por meio do uso de sua localização atual, os passageiros podem se deslocar com uma maior facilidade para o ponto desejado.
+
 \begin{figure}[H]
 \caption{Topin para Passageiros - Tela de Visualização dos Pontos da Linha}
 \centering
@@ -502,9 +521,12 @@ Ao analisarmos a Figura \ref{fig:passageiro-horarios-linha} é visível a presen
 \legend{Fonte: Autor}
 \label{fig:passageiro-pontos-linha}
 \end{figure}
-Podemos visualizar na Figura \ref{fig:passageiro-pontos-linha} que é possível visualizar os marcadores de interesse para a linha selecionada, em que é demonstrado no mapa por meio de um ícone todos os marcadores listados, ou seja, é visível não apenas a lista dos pontos de interesses, como também a sua geolocalização no mapa, e por meio do uso de sua localização atual, os passageiros podem se deslocar com uma maior facilidade para o ponto desejado.
 
-Como dito anteriormente no trabalho em questão uma das maiores dificuldades encontradas pelos passageiros é com a entrega de reclamações para as pessoas responsáveis pela prestação do serviço e para tal é disponibilizado aos usuários do aplicativo móvel um ambiente em que é possível preencher um formulário rápido com a garantia de que sua reclamação será entregue para as autoridades que competem a responsabilidade pela boa ou má prestação do serviço de transporte público.
+Como dito anteriormente nesse trabalho uma das dificuldades encontradas pelos passageiros é a entrega de reclamações
+para as pessoas responsáveis pela prestação do serviço. Para alcançar esse objetivo é disponibilizado aos usuários
+do aplicativo móvel um ambiente (Figura \ref{fig:passageiro-feedback}) em que é possível enviar uma mensagem que
+será entregue as autoridades que competem a responsabilidade pela boa ou má prestação do serviço de transporte público.
+
 \begin{figure}[H]
 \caption{Topin para Passageiros - Tela de Registro de Feedback}
 \centering

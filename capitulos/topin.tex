@@ -50,7 +50,7 @@ RF004 & Como passageiro preciso visualizar as paradas mais próximas para entrar
 RF005 & Como passageiro preciso visualizar a minha posição atual no mapa para melhor me localizar em relação as paradas. \\ \hline
 RF006 & Como passageiro preciso efetuar uma reclamação para as autoridades competentes por meio do aplicativo. \\ \hline
 RF007 & Como passageiro preciso registrar minhas linhas favoritas, para facilitar o meu acesso evitando visualizar informações que não são de meu interesse. \\ \hline
-RF008 & Como passageiro preciso visualizar as linhas disponíveis e os horários até quando não houver acesso a internet disponível. \\ \hline
+RF008 & Como passageiro preciso visualizar as linhas disponíveis e os horários até quando não houver acesso a \textit{internet} disponível. \\ \hline
 \end{tabular}
 \legend{Fonte: Autor}
 \end{table}
@@ -73,7 +73,7 @@ Na Tabela \ref{tab:empresa-requisitos-nao-funcionais} são descritas em formato 
 \textbf{ID} & \textbf{Descrição} \\
 \hline
 RNF001 & O sistema deve solicitar autenticação de usuário e senha para obter acesso. \\ \hline
-RNF002 & O sistema deve funcionar para o ambiente web de modo as ser compatível com os principais navegadores, como: Chrome, Firefox, Safari e Internet Explorer. \\ \hline
+RNF002 & O sistema deve funcionar para o ambiente \textit{web} de modo as ser compatível com os principais navegadores, como: Chrome, Firefox, Safari e \textit{internet} Explorer. \\ \hline
 RNF003 & O sistema deve estar disponível 24 horas por dia e 7 dias por semana. \\ \hline
 RNF004 & O sistema deve utilizar o sistema gerenciador de banco de dados PostgreSQL com a extensão PostGIS. \\ \hline
 RNF005 & O sistema deve utilizar a linguagem de programação Python em conjunto com o \textit{framework} Django e sua biblioteca GeoDjango. \\ \hline
@@ -96,7 +96,7 @@ Na Tabela \ref{tab:passageiro-requisitos-nao-funcionais} são descritas em forma
 \hline
 RNF001 & O aplicativo do passageiro deve funcionar para a plataforma Android, compatível com as versões acima da 4.4 KitKat. \\ \hline
 RNF002 & O sistema deve possuir uma API para consultas de informações, utilizando a arquitetura REST e o formato de dados JSON. \\ \hline
-RNF003 & O aplicativo deve armazenar os dados consultados à API utilizando o banco de dados pra disponibilizar os dados quando não houver conexão com a internet. \\ \hline
+RNF003 & O aplicativo deve armazenar os dados consultados à API utilizando o banco de dados pra disponibilizar os dados quando não houver conexão com a \textit{internet}. \\ \hline
 RNF004 & A API deve estar disponível 24 horas por dia e 7 dias por semana. \\ \hline
 RNF005 & A API deve suportar uma carga de acesso acima de 100 acessos simultâneos e mais de 10 mil consultas diárias. \\ \hline
 RNF006 & O aplicativo deve funcionar de forma nativa a plataforma Android utilizando a linguagem de programação Java. \\ \hline
@@ -109,7 +109,7 @@ RNF007 & O aplicativo deve seguir as diretivas de interface do usuário descrita
 
 \subsection{Modelagem do Sistema}
 
-Ao término do levantamento de requisitos de qualquer software, é impreterível a modelagem do sistema em virtude da dificuldade de entendimento das funcionalidades levantadas e, ao efetuar a modelagem do sistema facilita a compreensão do sistema por parte da equipe, bem como do próprio cliente, uma vez que comumente essa modelagem é feita por meio de diagramas UML que possibilitam uma visão gráfica do sistema, e não apenas textual.
+Ao término do levantamento de requisitos de qualquer \textit{software}, é impreterível a modelagem do sistema em virtude da dificuldade de entendimento das funcionalidades levantadas e, ao efetuar a modelagem do sistema facilita a compreensão do sistema por parte da equipe, bem como do próprio cliente, uma vez que comumente essa modelagem é feita por meio de diagramas UML que possibilitam uma visão gráfica do sistema, e não apenas textual.
 
 Neste capítulo será possível visualizar dois dos principais diagramas da UML, o diagrama de classes e o diagrama de casos de uso. Tendo em vista a melhoria do entendimento reduziu-se os diagramas para demonstrar apenas o essencial para a compreensão da solução proposta por esse trabalho.
 
@@ -167,7 +167,7 @@ Como pode ser visto na Figura \ref{fig:modelo-entidade-e-relacionamento} o model
 
 \subsection{Aplicativo Web}
 
-Para o desenvolvimento da versão \textit{web} do aplicativo Topin, composta por um ambiente administrativo que possibilita o registro das informações necessárias para o funcionamento do sistema, foi utilizada a arquitetura de software MTV que como pode ser visto na Figura \ref{fig:model-template-view} é dividida em três camadas:
+Para o desenvolvimento da versão \textit{web} do aplicativo Topin, composta por um ambiente administrativo que possibilita o registro das informações necessárias para o funcionamento do sistema, foi utilizada a arquitetura de \textit{software} MTV que como pode ser visto na Figura \ref{fig:model-template-view} é dividida em três camadas:
 
 \begin{figure}[H]
 \caption{Arquitetura Model-Template-View}
@@ -185,7 +185,7 @@ Para o desenvolvimento da versão \textit{web} do aplicativo Topin, composta por
 
 \subsection{Aplicativo Móvel}
 
-O aplicativo para dispositivos móveis que visa atender as necessidades dos usuários de transporte público foi desenvolvido para a plataforma Android utilizando o padrão de arquitetura de software MVP que como pode ser visto na Figura \ref{fig:model-view-presenter} é composto de três camadas:
+O aplicativo para dispositivos móveis que visa atender as necessidades dos usuários de transporte público foi desenvolvido para a plataforma Android utilizando o padrão de arquitetura de \textit{software} MVP que como pode ser visto na Figura \ref{fig:model-view-presenter} é composto de três camadas:
 
 \begin{lista}
 \item \textbf{Model} é a representação abstrata das informações que serão armazenadas, sendo esta a camada que demonstra os campos que serão atualizadas pelo presenter quando houver modificações na view.
@@ -236,7 +236,7 @@ POST & /api/complaint & Registra uma nova reclamação \\ \hline
 
 \section{Tecnologias Utilizadas}
 
-Para a implementação do objeto deste trabalho foram utilizadas várias tecnologias, principalmente pela necessidade de desenvolvimento de três partes distintas que compõem o Topin, o sistema web, o aplicativo móvel e a API. A seguir serão demonstradas as tecnologias utilizadas para cada uma destas partes, entretanto como mencionado anteriormente o sistema web e a API funcionam de forma conjunta e são implementados em um único software, então as tecnologias utilizadas serão apresentadas de forma conjunta.
+Para a implementação do objeto deste trabalho foram utilizadas várias tecnologias, principalmente pela necessidade de desenvolvimento de três partes distintas que compõem o Topin, o sistema \textit{web}, o aplicativo móvel e a API. A seguir serão demonstradas as tecnologias utilizadas para cada uma destas partes, entretanto como mencionado anteriormente o sistema \textit{web} e a API funcionam de forma conjunta e são implementados em um único \textit{software}, então as tecnologias utilizadas serão apresentadas de forma conjunta.
 
 \subsection*{Sistema Web e API}
 
@@ -250,9 +250,9 @@ Para a implementação do objeto deste trabalho foram utilizadas várias tecnolo
 \textbf{Tecnologia} & \textbf{Descrição} \\
 \hline
 Python\footnotemark & Linguagem de programação orientada a objetos, interpretada e interativa. \\ \hline
-Django\footnotemark & O Django é um framework web gratuito, de código aberto e de alto nível que incentiva o rápido desenvolvimento e o design limpo e pragmático. \\ \hline
+Django\footnotemark & O Django é um framework \textit{web} gratuito, de código aberto e de alto nível que incentiva o rápido desenvolvimento e o design limpo e pragmático. \\ \hline
 Django Rest Framework\footnotemark & Módulo para o Django que possui um kit de ferramentas poderoso e flexível para criar API's com a arquitetura REST. \\ \hline
-GeoDjango\footnotemark & Módulo para o Django que o transforma em um framework web geográfico de classe mundial. \\ \hline
+GeoDjango\footnotemark & Módulo para o Django que o transforma em um framework \textit{web} geográfico de classe mundial. \\ \hline
 PostgreSQL\footnotemark & Poderoso sistema de banco de dados objeto-relacional de código aberto. \\ \hline
 PostGIS\footnotemark & Extensão para o PostgreSQL que o transforma em um banco de dados geográfico. \\ \hline
 GIT\footnotemark & Sistema de controle de versão distribuído, gratuito e de código aberto projetado para lidar com projetos de pequeno e grande porte. \\ \hline
@@ -299,11 +299,11 @@ GIT & Sistema de controle de versão distribuído, gratuito e de código aberto 
 
 \subsection{Python}
 
-Python é uma linguagem de programação de alto nível, no qual suporta vários paradigmas, como orientado a objetos, imperativo, funcional e procedural. É uma linguagem fortemente tipada, como também possui uma tipagem dinâmica. Um dos seus maiores diferenciais se deve ao fato de possuir um código de fácil leitura e exigi a escrita de poucas linhas de código, caso seja comparado a programas, que possuam a mesma finalidade, desenvolvidos em outra linguagem. Como consequência de suas características, o uso desta linguagem se da principalmente no uso de processamento de textos, dados científicos e desenvolvimento de páginas dinâmicas para a web.
+Python é uma linguagem de programação de alto nível, no qual suporta vários paradigmas, como orientado a objetos, imperativo, funcional e procedural. É uma linguagem fortemente tipada, como também possui uma tipagem dinâmica. Um dos seus maiores diferenciais se deve ao fato de possuir um código de fácil leitura e exigi a escrita de poucas linhas de código, caso seja comparado a programas, que possuam a mesma finalidade, desenvolvidos em outra linguagem. Como consequência de suas características, o uso desta linguagem se da principalmente no uso de processamento de textos, dados científicos e desenvolvimento de páginas dinâmicas para a \textit{web}.
 
 \subsection{Django}
 
-O Django é um framework de alto nível para a linguagem Python, que incentiva o desenvolvimento rápido, ao mesmo tempo que implementa um projeto de código simples e objetivo. Construído para que os desenvolvedores foquem no que precisa ser desenvolvido sem ter que reinventar a roda, o Django possui uma grande quantidade de mini frameworks embutidos para as mais diversas áreas do desenvolvimento web, como por exemplo a criação de API's, a construção de aplicações utilizando dados espaciais entre outros. A seguir são demonstradas algumas características principais que tornaram este framework a ferramenta necessário para o desenvolvimento do Topin.
+O Django é um framework de alto nível para a linguagem Python, que incentiva o desenvolvimento rápido, ao mesmo tempo que implementa um projeto de código simples e objetivo. Construído para que os desenvolvedores foquem no que precisa ser desenvolvido sem ter que reinventar a roda, o Django possui uma grande quantidade de mini frameworks embutidos para as mais diversas áreas do desenvolvimento \textit{web}, como por exemplo a criação de API's, a construção de aplicações utilizando dados espaciais entre outros. A seguir são demonstradas algumas características principais que tornaram este framework a ferramenta necessário para o desenvolvimento do Topin.
 
 \begin{figure}[H]
 \caption{Arquitetura de Funcionamento do Django}
@@ -315,10 +315,10 @@ O Django é um framework de alto nível para a linguagem Python, que incentiva o
 
 \subsubsection{Django Rest Framework}
 
-O framework Django REST é um módulo que utilizado juntamente com o Django fornece um kit de ferramentas poderoso e flexível para criar APIs da Web, pode-se destacar algumas das principais razões para sua utilização no desenvolvimento de API's seguindo a arquitetura REST, são estas:
+O framework Django REST é um módulo que utilizado juntamente com o Django fornece um kit de ferramentas poderoso e flexível para criar APIs da \textit{web}, pode-se destacar algumas das principais razões para sua utilização no desenvolvimento de API's seguindo a arquitetura REST, são estas:
 
 \begin{lista}
-\item A API navegável da Web, fornecendo um meio gráfico e interativo para verificar o funcionamento da API.
+\item A API navegável da \textit{web}, fornecendo um meio gráfico e interativo para verificar o funcionamento da API.
 \item Políticas de autenticação, incluindo pacotes para o funcionamento de JWT, OAuth1 e OAuth2.
 \item Serialização que suporta fontes de dados ORM e não-ORM.
 \item Altamente personalizável, podendo apenas utilizar views baseadas em funções recursos rápidos e simples, a menos que necessário a utilização de recursos mais poderosos.
@@ -327,7 +327,7 @@ O framework Django REST é um módulo que utilizado juntamente com o Django forn
 
 \subsubsection{GeoDjango}
 
-GeoDjango é um módulo incluído por padrão no Django que o transforma em um framework web geográfico de classe mundial. O GeoDjango se esforça para tornar o mais simples possível a criação de aplicativos geográficos da Web, como serviços baseados em localização. Suas características incluem:
+GeoDjango é um módulo incluído por padrão no Django que o transforma em um framework \textit{web} geográfico de classe mundial. O GeoDjango se esforça para tornar o mais simples possível a criação de aplicativos geográficos da \textit{web}, como serviços baseados em localização. Suas características incluem:
 
 \begin{lista}
 \item Tipos de campos para modelos do Django que abordam dados geométricos e geográficos.
@@ -367,13 +367,13 @@ O PostGIS é uma extensão que transforma o PostgreSQL em um banco de dados espa
 \end{lista}
 \subsection{Java}
 
-O Java é uma linguagem de programação utilizada para o desenvolvimento de aplicações de todos os tipos, em rede, bem como é amplamente utilizada para a implementação de soluções móveis e embarcadas, como jogos, sistemas para a internet e softwares corporativos.
+O Java é uma linguagem de programação utilizada para o desenvolvimento de aplicações de todos os tipos, em rede, bem como é amplamente utilizada para a implementação de soluções móveis e embarcadas, como jogos, sistemas para a \textit{internet} e softwares corporativos.
 
 Esta linguagem foi projetada para permitir o desenvolvimento de aplicações multiplataforma de alto desempenho para os mais diversos ambientes de execução. Além de algumas dessas vantagens, o Java se tornou uma importante ferramenta de desenvolvimento, pois permite que os desenvolvedores:
 
 \begin{lista}
-\item Armazenem um software em uma plataforma e o executem virtualmente em qualquer outro ambiente.
-\item Implementem softwares para a internet.
+\item Armazenem um \textit{software} em uma plataforma e o executem virtualmente em qualquer outro ambiente.
+\item Implementem softwares para a \textit{internet}.
 \item Integre aplicações e serviços utilizando a linguagem para desenvolver aplicações personalizáveis.
 \item Desenvolva sistemas de alto desempenho e eficientes para celulares, processadores remotos, microcontroladores, módulos sem fio, sensores, \textit{gateways}, produtos de consumo geral entre outros dispositivos.
 \end{lista}
@@ -436,7 +436,7 @@ Ainda no cadastro das linhas é possível visualizar na Figura \ref{fig:empresa-
 
 Ao registrar os horários, a forma de registro dos dias da semana se destaca, pois para esta aplicação foi criado um campo no banco de dados PostgreSQL do tipo lista de valores, que se trata de um tipo de campo onde é permitido salvar um conjunto de valores sem que exista a necessidade criação de uma nova tabela para tal objetivo, por esse motivo o registro dos dias da semana para ser compatível com o banco de dados é colocado em uma cadeia de caracteres com os valores separados por vírgula, as opções de dias da semana são: \textit{sunday, monday, tuesday, wednesday, thursday, friday, saturday}.
 
-Ao visualizar a Figura \ref{fig:empresa-cadastro-horarios-trajeto} também podemos perceber que além dos horários, o administrador irá registrar todos os pontos de uma linha, contudo estes pontos são referentes ao trajeto, ou seja, o caminho percorrido pelo transporte na linha em questão. Geralmente, os pontos de referência escolhidos são baseados em sua localização no mapa para formar o desenho do trajeto possível, como por exemplo são colocadas as coordenadas geográficas apenas das curvas do trajeto, para os perfeccionistas é possível registrar todas as coordenadas do trajeto, o que pode facilmente passar de 200 coordenadas geográficas.
+Ao visualizar a Figura \ref{fig:empresa-cadastro-horarios-trajeto} pode-se observar que além dos horários, o administrador irá registrar todos os pontos de uma linha, contudo estes pontos são referentes ao trajeto, ou seja, o caminho percorrido pelo transporte na linha em questão. Geralmente, os pontos de referência escolhidos são baseados em sua localização no mapa para formar o desenho do trajeto possível, como por exemplo são colocadas as coordenadas geográficas apenas das curvas do trajeto, para os perfeccionistas é possível registrar todas as coordenadas do trajeto, o que pode facilmente passar de 200 coordenadas geográficas.
 
 \begin{figure}[H]
 \caption{Topin para Empresa - Tela de Cadastro dos Horários e Trajeto da Linha}
@@ -459,9 +459,11 @@ Os marcadores são pontos de interesse no uso de transporte público e para os a
 Um dos principais problemas descritos nesse trabalho se deve a dificuldade dos passageiros entrarem em contato com as pessoas
 responsáveis pelo transporte público para descrever a sua indignação com o serviço prestado de alguma forma, como já foi
 demonstrado neste projeto os passageiros, muitas vezes, não sabem a quem reclamar e acabam culpando pessoas ou instituições
-que não tem autoridade para solucionar o problema encontrado e, como pode ser visto na Figura \ref{fig:empresa-visualizar-reclamacao},
-visando este problema foi disponibilizada, aos administradores das empresas de transporte público, uma seção onde eles podem
-acompanhar as reclamações que os passageiros enviaram por meio do aplicativo móvel do Topin.
+que não tem autoridade para solucionar o problema encontrado.
+
+Como pode ser visto na Figura \ref{fig:empresa-visualizar-reclamacao}, visando este problema foi disponibilizada aos
+administradores das empresas de transporte público uma seção onde eles podem acompanhar as reclamações que os passageiros
+enviaram por meio do aplicativo Topin.
 
 \begin{figure}[H]
 \caption{Topin para Empresa - Tela de Visualização das Reclamações}
@@ -473,14 +475,30 @@ acompanhar as reclamações que os passageiros enviaram por meio do aplicativo m
 
 \subsection{Passageiro}
 
-O aplicativo criado para o uso dos passageiros de transporte coletivo possui o objetivo de informá-los quanto a detalhes referentes ao funcionamento do serviço de transporte público, porém antes de detalhar algumas das funcionalidades do aplicativo vale ressaltar o funcionamento do aplicativo para manutenção dos dados sem a necessidade do uso de internet, por ser um recurso que funciona em segundo plano não existe a possibilidade de demonstrá-lo graficamente, entretanto todos os dados mostrados no aplicativo são consultados na API de informações do Topin, em que há a necessidade de uso de uma rede de dados, contudo o aplicativo ao consultar as informações, automaticamente salva as informações no banco de dados, permitindo verificar em um acesso posterior se há  internet disponível no dispositivo ou se foi encontrado algum erro na consulta das informações, caso isso aconteça, serão exibidos os dados armazenados localmente e, com isso, garantir que os passageiros terão acesso as informações que precisa mesmo que não possua acesso a uma rede de dados disponível no momento.
+O aplicativo criado para o uso dos passageiros de transporte coletivo possui o objetivo de informá-los sobre detalhes referentes
+ao funcionamento do serviço de transporte público, porém antes de explicar as funcionalidades do aplicativo vale ressaltar
+que o aplicativo permite a visualização das informações sem a necessidade do uso de \textit{internet}, por ser um recurso que funciona em
+segundo plano não existe a possibilidade de demonstrá-lo graficamente.
 
-Uma das funcionalidades principais do aplicativo pode ser vista na Figura \ref{fig:passageiro-linhas-disponiveis} em que é possível perceber a presença de um ambiente que permite visualizar todas as linhas disponíveis para uso do transporte público na região, além de dividir essas informações com um mapa demonstrando sua localização atual. Ao passageiro também é permitido arrastar a lista das linhas para cima permitindo visualizar apenas as linhas disponíveis, em tela cheia, ou como podemos visualizar na Figura \ref{fig:passageiro-visualizacao-linha} é possível deslizar a lista de linhas para baixo tornando possível apenas visualizar em tela cheia o mapa e, portanto o passageiro poderá ter uma melhor visualização da sua posição atual em relação as paradas e o trajeto da linha selecionada.
+Entretanto todos os dados mostrados no aplicativo são consultados na API do Topin, em que necessita do uso de uma rede de dados,
+contudo o aplicativo ao recebê-los automaticamente os salva no banco de dados do \textit{smartphone}, permitindo verificar em um
+acesso posterior se há \textit{internet} disponível no dispositivo ou se foi encontrado algum erro na consulta das informações, caso isso
+aconteça, serão exibidos os dados armazenados no \textit{smartphone} e, com isso, garantir que os passageiros terão acesso as
+informações que precisa mesmo que não possua \textit{internet} disponível no momento.
 
-\begin{figure}[t]
+Uma das funcionalidades principais do aplicativo pode ser vista na Figura \ref{fig:passageiro-linhas-disponiveis} onde é possível
+perceber a presença de um espaço que permite visualizar todas as linhas disponíveis para uso do transporte público na região,
+além de dividir essas informações com um mapa demonstrando sua localização atual.
+
+Também é permitido ao usuário arrastar a lista das linhas para cima possibilitando a visualização apenas das linhas disponíveis
+ocupando todo o espaço disponível na tela do \textit{smartphone} ou como demonstrado na Figura \ref{fig:passageiro-visualizacao-linha}
+é possível deslizar a lista de linhas para baixo fazendo com que o mapa preencha toda a tela do aparelho, portanto o passageiro poderá
+ter uma visualização ampla da sua posição atual em relação as paradas e o trajeto da linha selecionada.
+
+\begin{figure}[H]
 \caption{Topin para Passageiros - Tela de Visualização das Linhas Disponíveis}
 \centering
-\includegraphics[width=0.4\textwidth]{imagens/linhas-disponiveis.png}
+\includegraphics[width=0.3\textwidth]{imagens/linhas-disponiveis.png}
 \legend{Fonte: Autor}
 \label{fig:passageiro-linhas-disponiveis}
 \end{figure}
@@ -488,7 +506,7 @@ Uma das funcionalidades principais do aplicativo pode ser vista na Figura \ref{f
 \begin{figure}[H]
 \caption{Topin para Passageiros - Tela de Visualização da Linha Selecionada}
 \centering
-\includegraphics[width=0.4\textwidth]{imagens/visualizacao-linha.png}
+\includegraphics[width=0.3\textwidth]{imagens/visualizacao-linha.png}
 \legend{Fonte: Autor}
 \label{fig:passageiro-visualizacao-linha}
 \end{figure}
@@ -507,20 +525,12 @@ caso específico, a parada do Centro.
 \begin{figure}[H]
 \caption{Topin para Passageiros - Tela de Visualização dos Horários da Linha}
 \centering
-\includegraphics[width=0.4\textwidth]{imagens/horarios-linha.png}
+\includegraphics[width=0.3\textwidth]{imagens/horarios-linha.png}
 \legend{Fonte: Autor}
 \label{fig:passageiro-horarios-linha}
 \end{figure}
 
 Pode-se visualizar na Figura \ref{fig:passageiro-pontos-linha} que é possível visualizar os marcadores de interesse para a linha selecionada, em que é demonstrado no mapa por meio de um ícone todos os marcadores listados, ou seja, é visível não apenas a lista dos pontos de interesses, como também a sua geolocalização no mapa, e por meio do uso de sua localização atual, os passageiros podem se deslocar com uma maior facilidade para o ponto desejado.
-
-\begin{figure}[H]
-\caption{Topin para Passageiros - Tela de Visualização dos Pontos da Linha}
-\centering
-\includegraphics[width=0.4\textwidth]{imagens/pontos-linha.png}
-\legend{Fonte: Autor}
-\label{fig:passageiro-pontos-linha}
-\end{figure}
 
 Como dito anteriormente nesse trabalho uma das dificuldades encontradas pelos passageiros é a entrega de reclamações
 para as pessoas responsáveis pela prestação do serviço. Para alcançar esse objetivo é disponibilizado aos usuários
@@ -528,9 +538,17 @@ do aplicativo móvel um ambiente (Figura \ref{fig:passageiro-feedback}) em que �
 será entregue as autoridades que competem a responsabilidade pela boa ou má prestação do serviço de transporte público.
 
 \begin{figure}[H]
+\caption{Topin para Passageiros - Tela de Visualização dos Pontos da Linha}
+\centering
+\includegraphics[width=0.3\textwidth]{imagens/pontos-linha.png}
+\legend{Fonte: Autor}
+\label{fig:passageiro-pontos-linha}
+\end{figure}
+
+\begin{figure}[H]
 \caption{Topin para Passageiros - Tela de Registro de Feedback}
 \centering
-\includegraphics[width=0.4\textwidth]{imagens/feedback.png}
+\includegraphics[width=0.3\textwidth]{imagens/feedback.png}
 \legend{Fonte: Autor}
 \label{fig:passageiro-feedback}
 \end{figure}
